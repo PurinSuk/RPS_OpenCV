@@ -4,3 +4,21 @@
     margin-right: auto;
     width: 50%;
 }
+
+.login_content {
+    text-align: center;
+}
+
+.personal {
+    margin: auto;
+    height: 220px;
+    width: 350px;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    padding: 1em;
+}
+
+#register {
+    margin-left: 50px;
+}
