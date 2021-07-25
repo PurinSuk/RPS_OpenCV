@@ -36,6 +36,15 @@
                     <label for="password">Password: </label>
                     <input style="margin-left: 5px" type="password" id="password" name="password">
                     <br><br>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for msg in messages %}
+                                <p style="color:red;">{{msg}}</p>
+                            {% endfor %}
+                        {% else %}
+                            <br>
+                        {% endif %}
+                    {% endwith %}
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
