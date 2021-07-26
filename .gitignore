@@ -1,2 +1,8 @@
 # ignore virtual environment
 .venv
+
+# ignore .pyc files
+__pycache__
+
+# ignore database
+players.sqlite3
