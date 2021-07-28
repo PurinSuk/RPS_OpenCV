@@ -1,8 +1,27 @@
 {% extends 'base.html' %}
 
+{% block css %}
+    <link rel="stylesheet" href="{{url_for("static", filename="game.css")}}">
+{% endblock %}
+
 {% block title %}Game Page{% endblock %}
 
 
 {% block outside_nav %}
-    <h1>This is a game page</h1>
+    <h1>Rock Paper Scissors</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <p style="color:black;">{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <button id="start" onclick="window.location.href='/play'" type="button" class="btn btn-primary">start</button>
+    <div class="result">
+        <span class="result_text win">Win</span>
+        <br>
+        <span class="result_text lose">Lose</span>
+        <br>
+        <span class="result_text draw">Draw</span>
+    </div>
 {% endblock %}
