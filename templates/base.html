@@ -6,9 +6,10 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
         crossorigin="anonymous">
         {% block css %}{% endblock %}
+        {% block javascript %}{% endblock %}
         <title>{% block title %}{% endblock %}</title>
     </head>
-    <boby>
+    <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <span class="navbar-brand mb-0 h1">RPS</span>
             {% block content %}

@@ -1,6 +1,9 @@
 # ignore virtual environment
 .venv
 
+# ignore configuration
+.idea
+
 # ignore .pyc files
 __pycache__
 

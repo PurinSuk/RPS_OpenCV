@@ -1,10 +1,31 @@
 {% extends 'base.html' %}
 
+{% block javascript %}
+    <script>
+        window.addEventListener('load', function() {
+                var count = 10;
+                var counter = setInterval(timer, 1000);
+
+                function timer() {
+                    count = count - 1;
+                    if (count <= 0) {
+                        clearInterval(counter);
+                        // Code to perform after the countdown ends
+                        return;
+                    }
+                    document.getElementById("timer").innerHTML = count
+                }
+            }
+        );
+    </script>
+{% endblock %}
+
 {% block title %}Play Page{% endblock %}
 
 {% block content %}{% endblock %}
 
 {% block outside_nav %}
-    <h1>Hello</h1>
+    <h1>We're detecting your hand</h1>
+    <p id="timer">10</p>
     <img src="{{ url_for("video_feed") }}" width="50%">
 {% endblock %}
