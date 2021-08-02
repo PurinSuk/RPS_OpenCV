@@ -11,6 +11,7 @@
                     if (count <= 0) {
                         clearInterval(counter);
                         // Code to perform after the countdown ends
+                        window.location.href = "{{url_for("game")}}"
                         return;
                     }
                     document.getElementById("timer").innerHTML = count

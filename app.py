@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request, redirect, session, flash, Response
 from model import db, Player
 import cv2
+from HandTrackingModule import handDetector
 
 app = Flask(__name__)
 app.secret_key = "super secret key :)"
@@ -12,11 +13,16 @@ db.init_app(app)
 camera = cv2.VideoCapture(0)
 
 def gen_frames():
+    detector = handDetector()
     while True:
         success, frame = camera.read()
         if not success:
             break
         else:
+            lmList = detector.findPosition(frame)
+            """
+            Code to check and update the global variable (rock/ paper/ scissors/ not_valid) 
+            """
             ret, buffer = cv2.imencode('.jpg', frame)
             frame = buffer.tobytes()
             yield (b'--frame\r\n'
