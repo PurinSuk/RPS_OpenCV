@@ -10,6 +10,32 @@ h1 {
     font-size: 20px;
 }
 
+#player_image {
+    position: absolute;
+    top: 10%;
+    left: 0%;
+}
+
+.player_text {
+    position: absolute;
+    bottom: 80px;
+    left: 200px;
+    font-size: 30px
+}
+
+#bot_image {
+    position: absolute;
+    top: 10%;
+    right: 0%;
+}
+
+.bot_text {
+    position: absolute;
+    bottom: 80px;
+    right: 200px;
+    font-size: 30px
+}
+
 .result {
     position: absolute;
     top: 53%;

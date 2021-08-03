@@ -9,3 +9,6 @@ __pycache__
 
 # ignore database
 players.sqlite3
+
+# ignore text file
+*.txt

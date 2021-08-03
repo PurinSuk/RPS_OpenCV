@@ -1,0 +1,13 @@
+#time_left_text {
+    position: absolute;
+    top: 35%;
+    right: 20%;
+    font-size: 50px;
+}
+
+#timer {
+    position: absolute;
+    top: 45%;
+    right: 25%;
+    font-size: 50px;
+}

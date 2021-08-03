@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block css %}
+    <link rel="stylesheet" href="{{url_for("static", filename="play.css")}}">
+{% endblock %}
+
 {% block javascript %}
     <script>
         window.addEventListener('load', function() {
@@ -27,6 +31,7 @@
 
 {% block outside_nav %}
     <h1>We're detecting your hand</h1>
+    <p id="time_left_text">Time left</p>
     <p id="timer">10</p>
     <img src="{{ url_for("video_feed") }}" width="50%">
 {% endblock %}

@@ -19,9 +19,21 @@
     <button id="start" onclick="window.location.href='/play'" type="button" class="btn btn-primary">start</button>
     <div class="result">
         <span class="result_text win">Win</span>
+        <span>6</span>
         <br>
         <span class="result_text lose">Lose</span>
+        <span>10</span>
         <br>
         <span class="result_text draw">Draw</span>
+        <span>15</span>
+    </div>
+    <div class="player">
+<!--        <img src={{player_image}} alt="Player's choice">-->
+        <image id="player_image" src="{{url_for('static', filename='none.jpg')}}"></image>
+        <span class="player_text">Player</span>
+    </div>
+    <div class="bot">
+        <image id="bot_image" src="{{url_for('static', filename='none.jpg')}}"></image>
+        <span class="bot_text">Computer</span>
     </div>
 {% endblock %}
