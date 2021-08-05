@@ -1,5 +1,6 @@
 """
     This code is based on the code from https://www.youtube.com/watch?v=NZde8Xt78Iw
+    by Murtaza Hassan
 """
 import cv2
 import mediapipe as mp

@@ -9,31 +9,24 @@
 
 {% block outside_nav %}
     <h1>Rock Paper Scissors</h1>
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for msg in messages %}
-                <p style="color:black;">{{msg}}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+    <p id="game_result">{{game_result}}</p>
     <button id="start" onclick="window.location.href='/play'" type="button" class="btn btn-primary">start</button>
     <div class="result">
         <span class="result_text win">Win</span>
-        <span>6</span>
+        <span class="result_number win_number">{{win}}</span>
         <br>
         <span class="result_text lose">Lose</span>
-        <span>10</span>
+        <span class="result_number lose_number">{{lose}}</span>
         <br>
         <span class="result_text draw">Draw</span>
-        <span>15</span>
+        <span class="result_number draw_number">{{draw}}</span>
     </div>
     <div class="player">
-<!--        <img src={{player_image}} alt="Player's choice">-->
-        <image id="player_image" src="{{url_for('static', filename='none.jpg')}}"></image>
+        <image id="player_image" src="{{url_for('static', filename=player_choice)}}"></image>
         <span class="player_text">Player</span>
     </div>
     <div class="bot">
-        <image id="bot_image" src="{{url_for('static', filename='none.jpg')}}"></image>
+        <image id="bot_image" src="{{url_for('static', filename=bot_choice)}}"></image>
         <span class="bot_text">Computer</span>
     </div>
 {% endblock %}

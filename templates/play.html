@@ -30,8 +30,12 @@
 {% block content %}{% endblock %}
 
 {% block outside_nav %}
-    <h1>We're detecting your hand</h1>
+    <div class="container">
+        <h1>We're detecting your hand</h1>
+    </div>
     <p id="time_left_text">Time left</p>
     <p id="timer">10</p>
-    <img src="{{ url_for("video_feed") }}" width="50%">
+    <div class="container">
+        <img src="{{ url_for("video_feed") }}" width="50%">
+    </div>
 {% endblock %}

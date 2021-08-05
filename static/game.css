@@ -16,6 +16,11 @@ h1 {
     left: 0%;
 }
 
+#game_result {
+    text-align: center;
+    padding-top: 12%;
+}
+
 .player_text {
     position: absolute;
     bottom: 80px;
@@ -63,4 +68,22 @@ h1 {
 
 .draw {
     color: blue;
+}
+
+.result .result_number {
+    font-size: 30px;
+    position: relative;
+
+}
+
+.win_number {
+    left: 47%;
+}
+
+.lose_number {
+    left: 44.5%;
+}
+
+.draw_number {
+    left: 40%;
 }
