@@ -12,3 +12,6 @@ players.sqlite3
 
 # ignore text file
 *.txt
+
+# but do not ignore
+!requirements.txt
