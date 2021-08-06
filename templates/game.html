@@ -10,7 +10,9 @@
 {% block outside_nav %}
     <h1>Rock Paper Scissors</h1>
     <p id="game_result">{{game_result}}</p>
-    <button id="start" onclick="window.location.href='/play'" type="button" class="btn btn-primary">start</button>
+    <form action="/play" method="post">
+        <button id="start" type="submit" class="btn btn-primary">start</button>
+    </form>
     <div class="result">
         <span class="result_text win">Win</span>
         <span class="result_number win_number">{{win}}</span>

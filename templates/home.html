@@ -4,5 +4,17 @@
 
 
 {% block outside_nav %}
-    <h1>Hello {{user}}!</h1>
+    <div class="container">
+        <h1>Hello {{user}}!</h1>
+        <br>
+        <h2><u>How to play</u></h2>
+        <ol>
+            <li>Click the "play" tab</li>
+            <li>Press the start button</li>
+            <li>Hold your hand to be rock/ paper/ scissors</li>
+        </ol>
+        <h2><u>Caution!!</u></h2>
+        <p>The hand-detection page will not be closed once the hand-detection is done.</p>
+        <p>We therefore ask you to close such tab manually to allow the game to proceed.</p>
+    </div>
 {% endblock %}
