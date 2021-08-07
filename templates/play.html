@@ -15,7 +15,8 @@
                     if (count <= 0) {
                         clearInterval(counter);
                         // Code to perform after the countdown ends
-                        window.open("{{url_for("game")}}");
+
+                        window.location.href = "{{url_for("between")}}";
                     }
                     document.getElementById("timer").innerHTML = count
                 }

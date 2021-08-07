@@ -114,6 +114,7 @@ def login():
                 session["win"] = query.win
                 session["lose"] = query.lose
                 session["draw"] = query.tie
+                session["player_choice"] = None
                 return redirect(url_for("home"))
             else:
                 flash("Username or password (or both) is incorrect!", "error")
@@ -149,14 +150,14 @@ def game():
         """
         Code to determine the values to pass to game.html
         """
-        global player_choice
-        if player_choice is None:
+        player = None if session["player_choice"] is None else Choice(session["player_choice"])
+        if player is None:
             game_result = ""
-            player_image = utils.image_path(player_choice)
+            player_image = utils.image_path(player)
             bot_image = utils.image_path(None)
         else:
             bot = utils.bot_choice()
-            result = utils.bot_vs_player(player_choice, bot)
+            result = utils.bot_vs_player(player, bot)
             if result == 1:
                 game_result = "Congrats! You win!"
                 session["win"] += 1
@@ -166,9 +167,9 @@ def game():
             else:
                 game_result = "It's a draw!"
                 session["draw"] += 1
-            player_image = utils.image_path(player_choice)
+            player_image = utils.image_path(player)
             bot_image = utils.image_path(bot)
-        player_choice = None
+        session["player_choice"] = None
         return render_template("game.html", game_result=game_result, player_choice=player_image,
                     bot_choice=bot_image, win=session["win"],  lose=session["lose"], draw=session["draw"])
     return redirect(url_for("login"))
@@ -181,6 +182,13 @@ def video_feed():
 def play():
     if "username" in session:
         return render_template("play.html")
+    return redirect(url_for("login"))
+
+@app.route("/between/")
+def between():
+    if "username" in session:
+        session["player_choice"] = None if player_choice is None else player_choice.value
+        return redirect(url_for("game"))
     return redirect(url_for("login"))
 
 if __name__ == "__main__":
