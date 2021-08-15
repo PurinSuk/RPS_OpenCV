@@ -1,5 +1,5 @@
 # RPS_OpenCV
-The classic Rock-Paper-Scissors game on local server with a turn-on webcam.
+The classic Rock-Paper-Scissors game on local server with a webcam to detect player's hand gesture.
 
 The purpose of this project is to practice **Web Development (HTML, CSS, JavaScript, Bootstrap, Flask)** and **Computer Vision (OpenCV)** in **Python**.
 
